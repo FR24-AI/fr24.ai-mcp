@@ -6,7 +6,7 @@ Source: [FR24 International Flights MCP Integration Guide](https://fr24.ai/mcp.h
 
 ---
 
-## ModelScope MCP 服务配置
+## MCP 服务配置
 
 将 GitHub 仓库导入 ModelScope MCP 广场时，可使用以下服务配置。`X_CID` 和 `X_PASSKEY` 为用户侧环境变量，分别对应 FR24 分配的采购商 ID 和 16 位采购密钥。
 

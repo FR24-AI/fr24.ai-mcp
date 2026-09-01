@@ -6,9 +6,13 @@ Source: [FR24 International Flights MCP Integration Guide](https://fr24.ai/mcp.h
 
 ---
 
-## ModelScope MCP 服务配置
+## 关于深圳航路
 
-将 GitHub 仓库导入 ModelScope MCP 广场时，可使用以下服务配置。`X_CID` 和 `X_PASSKEY` 为用户侧环境变量，分别对应 FR24 分配的采购商 ID 和 16 位采购密钥。
+FR24 AI 是 Flightroutes24 在全球机票分销领域的资源与 AI Agent 工作流连接起来，面向 Cursor、Claude Code、Codex 等客户端提供国际机票搜索、验价、下单、订单查询等端到端能力。深圳航路成立于 2014 年，依托自研 JET-X 交易系统，连接多 GDS、航司直连、NDC 与低成本航司资源，服务全球旅行社、OTA 与航旅采购商。通过 MCP，Agent 可按“搜索航班、锁定价格、提交预订、查询订单”的标准流程调用实时票价与库存能力，使全球机票采购从人工比价和系统切换，升级为可被 AI 编排、自动化执行的智能分销链路。
+
+## MCP 服务配置
+
+将 GitHub 仓库导入 MCP 广场时，可使用以下服务配置。`X_CID` 和 `X_PASSKEY` 为用户侧环境变量，分别对应 FR24 分配的采购商 ID 和 16 位采购密钥。
 
 ```json
 {
@@ -24,11 +28,6 @@ Source: [FR24 International Flights MCP Integration Guide](https://fr24.ai/mcp.h
   }
 }
 ```
-
-## 关于深圳航路
-
-FR24 AI 是 Flightroutes24 在全球机票分销领域的资源与 AI Agent 工作流连接起来，面向 Cursor、Claude Code、Codex 等客户端提供国际机票搜索、验价、下单、订单查询等端到端能力。深圳航路成立于 2014 年，依托自研 JET-X 交易系统，连接多 GDS、航司直连、NDC 与低成本航司资源，服务全球旅行社、OTA 与航旅采购商。通过 MCP，Agent 可按“搜索航班、锁定价格、提交预订、查询订单”的标准流程调用实时票价与库存能力，使全球机票采购从人工比价和系统切换，升级为可被 AI 编排、自动化执行的智能分销链路。
-
 ---
 
 FR24 AI MCP Server 提供国际机票搜索、验价、下单和订单查询的完整能力，支持 Cursor、Claude Code、Codex、WorkBuddy、OpenClaw 等兼容 MCP 的 AI Agent 客户端接入。

@@ -1,0 +1,191 @@
+{
+  "author": "FR24-AI",
+  "authorUrl": "https://github.com/FR24-AI",
+  "category": "tools",
+  "cloudEndpoint": "https://mcp.fr24.ai/mcp",
+  "description": "Global flight search, price verification, booking, and order lookup over MCP for AI agents.",
+  "homepage": "https://github.com/FR24-AI/fr24.ai-mcp",
+  "identifier": "fr24-ai-mcp",
+  "localizations": [
+    {
+      "description": "面向 AI Agent 的全球机票 MCP 服务，支持航班搜索、验价锁价、提交预订和订单查询。",
+      "locale": "zh-CN",
+      "name": "FR24 AI MCP"
+    }
+  ],
+  "name": "FR24 AI MCP",
+  "tags": [
+    "flight",
+    "travel",
+    "booking",
+    "airline",
+    "mcp"
+  ],
+  "tools": [
+    {
+      "description": "Search international flights by origin, destination, departure date, passenger count, cabin, price range, time window, transfer preference, or flight number.",
+      "inputSchema": {
+        "properties": {
+          "adultNum": {
+            "default": 1,
+            "description": "Number of adult passengers.",
+            "type": "integer"
+          },
+          "cabin": {
+            "description": "Cabin filter: Y economy, C business, F first, P premium economy.",
+            "type": "string"
+          },
+          "childNum": {
+            "default": 0,
+            "description": "Number of child passengers aged 2 to under 12.",
+            "type": "integer"
+          },
+          "depDate": {
+            "description": "Departure date in yyyy-MM-dd format.",
+            "type": "string"
+          },
+          "departureTimeRange": {
+            "description": "Departure time range for TIME search mode, e.g. 06:00-12:00.",
+            "type": "string"
+          },
+          "destination": {
+            "description": "Destination IATA airport or city code.",
+            "type": "string"
+          },
+          "flightNo": {
+            "description": "Flight number for FLIGHT search mode.",
+            "type": "string"
+          },
+          "infantNum": {
+            "default": 0,
+            "description": "Number of infant passengers under 2.",
+            "type": "integer"
+          },
+          "origin": {
+            "description": "Origin IATA airport or city code.",
+            "type": "string"
+          },
+          "priceRange": {
+            "description": "Total price range for PRICE search mode, e.g. 500-2000.",
+            "type": "string"
+          },
+          "retDate": {
+            "description": "Return date in yyyy-MM-dd format. Omit for one-way trips.",
+            "type": "string"
+          },
+          "searchMode": {
+            "description": "Search mode: TIME, PRICE, FLIGHT, TRANSFER, or CABIN.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin",
+          "destination",
+          "depDate"
+        ],
+        "type": "object"
+      },
+      "name": "shopping"
+    },
+    {
+      "description": "Verify and lock the selected flight offer price for 30 minutes before booking.",
+      "inputSchema": {
+        "properties": {
+          "adultNum": {
+            "default": 1,
+            "description": "Number of adult passengers, matching the shopping request.",
+            "type": "integer"
+          },
+          "childNum": {
+            "default": 0,
+            "description": "Number of child passengers, matching the shopping request.",
+            "type": "integer"
+          },
+          "infantNum": {
+            "default": 0,
+            "description": "Number of infant passengers, matching the shopping request.",
+            "type": "integer"
+          },
+          "offerId": {
+            "description": "Offer ID returned by shopping.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "offerId"
+        ],
+        "type": "object"
+      },
+      "name": "pricing"
+    },
+    {
+      "description": "Submit a flight booking using the verified offer and passenger JSON payload.",
+      "inputSchema": {
+        "properties": {
+          "allowedCardTypes": {
+            "description": "Allowed document types returned by pricing.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "contactEmail": {
+            "description": "Contact email.",
+            "type": "string"
+          },
+          "contactMobile": {
+            "description": "Contact mobile number.",
+            "type": "string"
+          },
+          "contactName": {
+            "description": "Contact name.",
+            "type": "string"
+          },
+          "departureDate": {
+            "description": "Departure date for passenger age validation.",
+            "type": "string"
+          },
+          "idempotencyKey": {
+            "description": "UUID idempotency key to prevent duplicate orders within 24 hours.",
+            "type": "string"
+          },
+          "partnerOrderNo": {
+            "description": "Partner custom order number.",
+            "type": "string"
+          },
+          "passengersJson": {
+            "description": "Passenger list as a JSON array string.",
+            "type": "string"
+          },
+          "verifyOfferId": {
+            "description": "Verified offer ID returned by pricing.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "verifyOfferId",
+          "passengersJson"
+        ],
+        "type": "object"
+      },
+      "name": "booking"
+    },
+    {
+      "description": "Query details of a submitted flight order.",
+      "inputSchema": {
+        "properties": {
+          "orderNo": {
+            "description": "Order number returned by booking.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "orderNo"
+        ],
+        "type": "object"
+      },
+      "name": "orderDetail"
+    }
+  ],
+  "version": "1.0.0"
+}

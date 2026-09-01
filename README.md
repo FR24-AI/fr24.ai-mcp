@@ -6,9 +6,14 @@ Source: [FR24 International Flights MCP Integration Guide](https://fr24.ai/mcp.h
 
 ---
 
-## ModelScope MCP Service Configuration
 
-Use the following service configuration when importing this GitHub repository into the ModelScope MCP marketplace. `X_CID` and `X_PASSKEY` are user-side environment variables for the FR24 buyer ID and 16-character passkey.
+## About Flightroutes24
+
+FR24 AI connects Flightroutes24's global flight distribution resources with AI Agent workflows, providing end-to-end capabilities for international flight search, price verification, booking, and order lookup across clients such as Cursor, Claude Code, and Codex. Founded in 2014, Shenzhen Flightroutes24 relies on its self-developed JET-X transaction system to connect multiple GDSs, airline direct connections, NDC channels, and low-cost carrier resources, serving travel agencies, OTAs, and travel procurement buyers worldwide. Through MCP, Agents can invoke real-time fares and inventory through the standard workflow of searching flights, locking prices, submitting bookings, and querying orders, upgrading global flight procurement from manual comparison and system switching into an intelligent distribution chain that AI can orchestrate and automate.
+
+## MCP Service Configuration
+
+Use the following service configuration when importing this GitHub repository into MCP marketplace. `X_CID` and `X_PASSKEY` are user-side environment variables for the FR24 buyer ID and 16-character passkey.
 
 ```json
 {
@@ -24,11 +29,6 @@ Use the following service configuration when importing this GitHub repository in
   }
 }
 ```
-
-## About Flightroutes24
-
-FR24 AI connects Flightroutes24's global flight distribution resources with AI Agent workflows, providing end-to-end capabilities for international flight search, price verification, booking, and order lookup across clients such as Cursor, Claude Code, and Codex. Founded in 2014, Shenzhen Flightroutes24 relies on its self-developed JET-X transaction system to connect multiple GDSs, airline direct connections, NDC channels, and low-cost carrier resources, serving travel agencies, OTAs, and travel procurement buyers worldwide. Through MCP, Agents can invoke real-time fares and inventory through the standard workflow of searching flights, locking prices, submitting bookings, and querying orders, upgrading global flight procurement from manual comparison and system switching into an intelligent distribution chain that AI can orchestrate and automate.
-
 ---
 
 FR24 AI MCP Server delivers the complete workflow for international flight search, price verification, booking, and order lookup. It supports MCP-compatible AI Agent clients such as Cursor, Claude Code, Codex, WorkBuddy, and OpenClaw.

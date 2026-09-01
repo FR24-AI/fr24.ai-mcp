@@ -6,6 +6,29 @@ Source: [FR24 International Flights MCP Integration Guide](https://fr24.ai/mcp.h
 
 ---
 
+## ModelScope MCP 服务配置
+
+将 GitHub 仓库导入 ModelScope MCP 广场时，可使用以下服务配置。`X_CID` 和 `X_PASSKEY` 为用户侧环境变量，分别对应 FR24 分配的采购商 ID 和 16 位采购密钥。
+
+```json
+{
+  "mcpServers": {
+    "fr-flight-mcp": {
+      "type": "http",
+      "url": "https://mcp.fr24.ai/mcp",
+      "headers": {
+        "X-Cid": "${X_CID}",
+        "X-Passkey": "${X_PASSKEY}"
+      }
+    }
+  }
+}
+```
+
+Service configuration for importing this GitHub repository into ModelScope MCP. `X_CID` and `X_PASSKEY` are user-side environment variables for the FR24 buyer ID and 16-character passkey.
+
+---
+
 ## 中文
 
 FR24 AI MCP Server 提供国际机票搜索、验价、下单和订单查询的完整能力，支持 Cursor、Claude Code、Codex、WorkBuddy、OpenClaw 等兼容 MCP 的 AI Agent 客户端接入。

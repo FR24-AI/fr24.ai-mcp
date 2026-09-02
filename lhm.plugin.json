@@ -5,7 +5,7 @@
   "cloudEndpoint": "https://mcp.fr24.ai/mcp",
   "description": "Global flight search, price verification, booking, and order lookup over MCP for AI agents.",
   "homepage": "https://github.com/FR24-AI/fr24.ai-mcp",
-  "identifier": "fr24-ai-fr24-ai-mcp",
+  "identifier": "fr24-ai-mcp",
   "localizations": [
     {
       "description": "面向 AI Agent 的全球机票 MCP 服务，支持航班搜索、验价锁价、提交预订和订单查询。",
